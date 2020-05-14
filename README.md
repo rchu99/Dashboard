@@ -1,5 +1,6 @@
-### Dashboard
- Dashboard created using Angular
+## Dashboard
+
+Dashboard created using Angular
  
 ## Development
 
