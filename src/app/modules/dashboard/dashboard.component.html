@@ -11,7 +11,23 @@
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="zero"
   fxLayout.lt-md="column" fxLayout.lt-sm="column" fxLayout.xs="column">
     <mat-card fxFlex="25" fxFlex.md="100%">
-        <app-widget-card label="New Users" total="12k" percentage="50" [data]="cards"></app-widget-card>
+
+      <form [formGroup]="this.dashboardService.form">
+        <label> Next Users estimate:</label>
+        <input placeholder="estimate"
+               formControlName="estimateNumber">
+        <button class="waves-effect waves-light btn col s4"
+                *ngFor="let users of cards"
+                (click)="addUsers(users)">
+          {{users}}</button>
+
+        <label> Remove a estimate: </label>
+        <button class="waves-effect waves-light btn col s4"
+                *ngFor="let users of cards"
+                (click)="removeUsers(users)">{{users}}</button>
+
+      </form>
+        <app-widget-card label="This months new users" total="12k" [percentage]= "percent" [data]="cards" target = "100k"></app-widget-card>
     </mat-card>
     <mat-card fxFlex="25" fxFlex.md="100%">
         <app-widget-card label="Users retention" total="10k" percentage="40" [data]="cards"></app-widget-card>

@@ -14,6 +14,7 @@ export class CardComponent implements OnInit {
   @Input() percentage: string;
   @Input() data = [];
 
+
   Highcharts = Highcharts;
   chartOptions = {};
 

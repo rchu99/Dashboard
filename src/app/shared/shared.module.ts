@@ -21,8 +21,6 @@ import { PieComponent } from './widgets/pie/pie.component';
 
 
 
-
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -42,7 +40,7 @@ import { PieComponent } from './widgets/pie/pie.component';
     MatMenuModule,
     MatListModule,
     HighchartsChartModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     HeaderComponent,

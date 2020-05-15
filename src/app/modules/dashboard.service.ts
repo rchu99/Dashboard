@@ -3,17 +3,17 @@ import { Observable, of } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
 
   constructor() { }
-    form = new FormGroup({
-      customerName: new FormControl(' '),
-      orderName: new FormControl(' '),
-      orderType: new FormControl(' '),
-      completed: new FormControl(false)
+
+  form = new FormGroup({
+          estimateNumber: new FormControl(''),
+          completed: new FormControl(false)
       })
 
   bigChart() {
@@ -36,7 +36,7 @@ export class DashboardService {
   }
 
   cards() {
-    return [4, 10, 15, 21]
+    return [4, 10, 15, 21, 35]
   }
 
   pieChart() {
