@@ -47,14 +47,17 @@ export class DashboardComponent implements OnInit {
     let index = this.cards.indexOf(users);
     if (index > -1) this.cards.splice(index, 1);
   }
-
   pieChart = [];
-  percent = (this.cards.indexOf(this.cards.length - 2) / this.cards.indexOf(this.cards.length - 1) -1)
+  percent = this.cards[this.cards.length - 2] / this.cards[this.cards.length - 1];
+  total = this.cards[0];
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+
+  value = '';
+  onEnter(value: string) { this.value = value; }
 
   constructor(public dashboardService: DashboardService) { }
 
@@ -62,7 +65,8 @@ export class DashboardComponent implements OnInit {
     this.bigChart = this.dashboardService.bigChart();
     this.cards = this.dashboardService.cards();
     this.pieChart = this.dashboardService.pieChart();
-    this.percent = this.percent;
+    this.percent = 60;
+    this.total = 35;
     this.dataSource.paginator = this.paginator;
   }
 
