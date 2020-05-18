@@ -14,7 +14,7 @@
 
       <form [formGroup]="this.dashboardService.form">
         <label> Next Users estimate:</label>
-        <input placeholder="onEnter(box.value)">
+        <input #box (keyup.enter)="onEnter(box.value)">
         <button class="waves-effect waves-light btn col s4"
                 (click)="addUsers(box.value)">
           Add</button>
