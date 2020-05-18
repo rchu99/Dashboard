@@ -17,9 +17,9 @@
         <input placeholder="estimate"
                formControlName="estimateNumber">
         <button class="waves-effect waves-light btn col s4"
-                *ngFor="let users of cards"
+                *ngIf="let users of estimateNumber"
                 (click)="addUsers(users)">
-          {{users}}</button>
+          Add</button>
 
         <label> Remove a estimate: </label>
         <button class="waves-effect waves-light btn col s4"

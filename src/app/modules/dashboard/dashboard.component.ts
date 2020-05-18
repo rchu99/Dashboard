@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
   }
 
   pieChart = [];
-  percent = this.cards.indexOf(this.cards.length - 1) / this.cards.indexOf(this.cards.length - 2)
+  percent = (this.cards.indexOf(this.cards.length - 2) / this.cards.indexOf(this.cards.length - 1) -1)
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
