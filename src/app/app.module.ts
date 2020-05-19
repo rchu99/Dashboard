@@ -10,10 +10,12 @@ import { DefaultModule } from './layouts/default/default.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { DashboardService } from './modules/dashboard.service';
+import { ProfileComponent } from './modules/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -42,11 +42,6 @@ export class DashboardComponent implements OnInit {
 
   bigChart = [];
   cards = [];
-  addUsers = users => this.cards.push(users);
-  removeUsers = users => {
-    let index = this.cards.indexOf(users);
-    if (index > -1) this.cards.splice(index, 1);
-  }
   pieChart = [];
   percent = this.cards[this.cards.length - 2] / this.cards[this.cards.length - 1];
   total = this.cards[0];
@@ -58,6 +53,16 @@ export class DashboardComponent implements OnInit {
 
   value = '';
   onEnter(value: string) { this.value = value; }
+
+  addUsers = users => this.cards.push(users);
+
+  removeUsers = users => {
+      let index = this.cards.indexOf(users);
+      if (index > -1) this.cards.splice(index, 1);
+    }
+
+  onSubmit() {
+  }
 
   constructor(public dashboardService: DashboardService) { }
 

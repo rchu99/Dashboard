@@ -4,15 +4,15 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: 'AIzaSyB5mCMziN-rhbVyJU3-enexjiXAx1c9930',
-    authDomain: 'dash-e3dc1.firebaseapp.com',
-    databaseURL: 'https://dash-e3dc1.firebaseio.com',
-    projectId: 'dash-e3dc1',
-    storageBucket: 'dash-e3dc1.appspot.com',
-    messagingSenderId: '886430825530',
-    appId: '1:886430825530:web:591377620465c3bcabc903',
-    measurementId: 'G-DV5GSX09YW'
+  firebaseConfig: {
+    apiKey: "AIzaSyB5mCMziN-rhbVyJU3-enexjiXAx1c9930",
+    authDomain: "dash-e3dc1.firebaseapp.com",
+    databaseURL: "https://dash-e3dc1.firebaseio.com",
+    projectId: "dash-e3dc1",
+    storageBucket: "dash-e3dc1.appspot.com",
+    messagingSenderId: "886430825530",
+    appId: "1:886430825530:web:591377620465c3bcabc903",
+    measurementId: "G-DV5GSX09YW"
   }
 };
 

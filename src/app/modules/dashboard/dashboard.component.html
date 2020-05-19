@@ -15,14 +15,18 @@
       <form [formGroup]="this.dashboardService.form">
         <label> Next Users estimate:</label>
         <input #box (keyup.enter)="onEnter(box.value)">
-        <button class="waves-effect waves-light btn col s4"
+        <button mat-flat-button color="primary"
                 (click)="addUsers(box.value)">
           Add</button>
-
-        <label> Remove: </label>
-        <button class="waves-effect waves-light btn col s4"
-                *ngFor="let users of cards"
-                (click)="removeUsers(users)">{{users}}</button>
+        <br>
+        <button mat-flat-button color="primary"
+                *ngFor="let user of cards"
+                (click)="removeUsers(user)">
+          {{user}}</button>
+        <br>
+        <button class="waves-effect waves-light btn col s12" (click)="onSubmit()">
+          Submit
+        </button>
 
       </form>
         <app-widget-card label="Months new users" [total]="total" [percentage]= "percent" [data]="cards" target = "100k"></app-widget-card>
