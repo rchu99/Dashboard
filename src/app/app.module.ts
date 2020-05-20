@@ -13,11 +13,15 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { environment } from '../environments/environment';
 import { DashboardService } from './modules/dashboard.service';
 import { ProfileComponent } from './modules/profile/profile.component';
+import { SettingsComponent } from './modules/settings/settings.component';
+import { HelpComponent } from './modules/help/help.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
+    SettingsComponent,
+    HelpComponent,
   ],
   imports: [
     BrowserModule,

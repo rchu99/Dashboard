@@ -4,7 +4,8 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { PostsComponent } from './modules/posts/posts.component';
 import { ProfileComponent } from './modules/profile/profile.component';
-
+import { SettingsComponent } from './modules/settings/settings.component';
+import { HelpComponent } from './modules/help/help.component';
 
 const routes: Routes = [{
   path: '',
@@ -18,8 +19,15 @@ const routes: Routes = [{
     }, {
     path: 'profile',
     component: ProfileComponent
+    }, {
+    path: 'settings',
+    component: SettingsComponent
+    }, {
+    path: 'help',
+    component: HelpComponent
     },
-]}];
+    ]
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
