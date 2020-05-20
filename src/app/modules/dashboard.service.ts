@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
 @Injectable({
@@ -9,12 +10,28 @@ import { FormGroup } from '@angular/forms';
 })
 export class DashboardService {
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore ) { }
 
   form = new FormGroup({
-          estimateNumber: new FormControl(''),
+          newUsers: new FormControl(''),
+          customerName: new FormControl(''),
+          orderNumber: new FormControl(''),
+          coffeeOrder: new FormControl(''),
           completed: new FormControl(false)
       })
+
+   createNewUsers(data) {
+    return new Promise<any>((resolve, reject) =>{
+      this.firestore
+        .collection("newUsers")
+        .add(data)
+        .then(res => {}, err => reject(err));
+        });
+        }
+
+  getNewUsers() {
+  return this.firestore.collection("newUsers").snapshotChanges();
+  }
 
   bigChart() {
     return [{

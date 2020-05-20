@@ -8,6 +8,8 @@ import { DefaultModule } from './layouts/default/default.module';
 
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+
 import { environment } from '../environments/environment';
 import { DashboardService } from './modules/dashboard.service';
 import { ProfileComponent } from './modules/profile/profile.component';
@@ -22,6 +24,8 @@ import { ProfileComponent } from './modules/profile/profile.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [DashboardService],
   bootstrap: [AppComponent]
