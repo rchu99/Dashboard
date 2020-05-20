@@ -16,8 +16,7 @@
         <label> Next Users estimate:</label>
         <input #box (keyup.enter)="onEnter(box.value)">
         <button mat-flat-button color="primary"
-                (click)="addUsers(box.value)">
-          Add</button>
+                (click)="addUsers(box.value)">Add</button>
         <br>
         <button mat-flat-button color="primary"
                 *ngFor="let user of cards"
@@ -25,7 +24,7 @@
           {{user}}</button>
         <br>
         <button class="waves-effect waves-light btn col s12" (click)="onSubmit()">
-          Submit
+          Submit new users list
         </button>
 
       </form>
@@ -92,6 +91,7 @@
     <div fxFlex="40">
         <app-widget-pie [data]="pieChart"></app-widget-pie>
     </div>
+
 </div>
 
 <br>

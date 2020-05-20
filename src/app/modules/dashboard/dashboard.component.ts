@@ -63,24 +63,17 @@ export class DashboardComponent implements OnInit {
 
   onSubmit() {
     this.dashboardService.form.value.newUsers = this.cards;
-    let data = this.dashboardService.form.value;
+    let data = this.dashboardService.form.value.newUsers;
 
     this.dashboardService.createNewUsers(data)
       .then(res => {
       });
   }
 
-  getNewUsers = () =>
-    this.dashboardService
-      .getNewUsers()
-      .subscribe(res => (this.cards = res));
-
   constructor(public dashboardService: DashboardService) { }
 
   ngOnInit() {
-
     this.bigChart = this.dashboardService.bigChart();
-    this.cards = this.dashboardService.cards();
     this.pieChart = this.dashboardService.pieChart();
     this.percent = 60;
     this.total = 35;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DashboardService } from '../dashboard.service';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dashboardService: DashboardService) { }
 
-  ngOnInit(): void {
+  getUsers = () =>
+      this.dashboardService
+        .getNewUsers()
+        .subscribe(res => (this.newUsers = res));
+
+  newUsers;
+
+  ngOnInit() {
+  this.getUsers;
   }
 
 }

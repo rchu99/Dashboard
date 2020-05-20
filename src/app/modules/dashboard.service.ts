@@ -52,10 +52,6 @@ export class DashboardService {
     }];
   }
 
-  cards() {
-    return [4, 10, 15, 21, 35]
-  }
-
   pieChart() {
     return [{
       name: 'Chrome',

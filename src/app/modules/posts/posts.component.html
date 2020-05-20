@@ -1,2 +1,12 @@
-<div> <app-widget-card></app-widget-card></div>
+
 <p>posts works!</p>
+<tbody>
+<tr *ngFor="let order of newUsers">
+  <td>{{ order.payload.doc.data().newUsers}}</td>
+  <td><span
+    *ngFor="let coffee of order.payload.doc.data().getNewUsers">
+       {{ coffee }}
+      </span>
+  </td>
+</tr>
+</tbody>
